@@ -1,0 +1,39 @@
+.favourite_board{
+    height: auto; 
+    width: auto;
+    background-color: #325aa8;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+}
+
+.favourite_board_heading{
+    position: absolute;
+    z-index: 1;
+    font-family: 'Dancing Script', cursive;
+    background-color: white;
+    font-size: xx-large;
+    padding: 3px 20px;
+
+}
+
+.favourite_cat_images{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-start
+}
+
+.favourite_cat_img{
+    height: 200px;
+    width: auto;
+    border: solid white 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    margin: 40px 10px;
+    
+}
+
+.favourite_cat_images img:nth-child(odd){
+    transform: rotate(20deg);
+}
+
+
+

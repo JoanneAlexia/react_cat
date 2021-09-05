@@ -1,0 +1,29 @@
+img{
+    height: 500px;
+    width: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: solid 10px white;
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    background-color: #325aa8;
+    border: none;
+    color: white;
+    border-radius: 2%;
+    padding: 10px;
+    font-size: large;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Azeret Mono', monospace;
+}
+
+.currentCat{
+    display: inline-block;
+    padding: 20px;
+}
