@@ -1,0 +1,39 @@
+header{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color:#325aa8;
+    z-index: 2;
+  }
+  
+  .toggles{
+    margin-left: 20px;
+  }
+  .toggle{
+    display: inline-block;
+    border-radius: 50%;
+    border: solid 2px white;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+  }
+  
+  .red{
+    background-color: #b50d3a;
+  }
+  
+  .blue{
+    background-color: #325aa8;
+  }
+  
+  
+  h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: xx-large;
+  }
+  
+  .login{
+    margin-right: 20px;
+  }

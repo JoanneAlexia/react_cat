@@ -13,12 +13,16 @@ function CurrentCat(props) {
         props.setFavourite(url);
     };
 
+    let style = {
+        backgroundColor: props.colorScheme
+    };
+
     return(
         <div className="currentCat">
             <div className="buttons">
-                <div className="catButton"><button onClick={newCatButtonClickHandler}><i class="fas fa-cat"></i> Show me another cat!</button></div>
+                <div className="catButton"><button style={style} onClick={newCatButtonClickHandler}><i class="fas fa-cat"></i> Show me another cat!</button></div>
                 <div className="FavouriteButton">
-                    <button onClick={favouriteCatClickHandler}><i className="far fa-grin-hearts"></i> This one's a favourite</button>
+                    <button style={style} onClick={favouriteCatClickHandler}><i className="far fa-grin-hearts"></i> This one's a favourite</button>
                 </div>
             </div>
             <img src={url} alt="cat"/>

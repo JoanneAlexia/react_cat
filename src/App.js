@@ -1,17 +1,22 @@
 import './App.css';
+import React, {useState} from "react";
 
 import CurrentCat from './Component/CurrentCat/CurrentCat';
-import FavouriteCat from './Component/FavouriteCat/FavouriteCat'
-import React, {useState} from "react";
+import FavouriteCat from './Component/FavouriteCat/FavouriteCat';
+import Header from './Component/Header/Header';
 
 function App() {
   const [favorite, setFavourite] = useState("https://cdn2.thecatapi.com/images/bkk.jpg");
+  const [colorScheme, setColorScheme] = useState("#325aa8");
 
   return (
     <div className="App">
-      <h1>Cat App</h1>
-      <CurrentCat setFavourite={setFavourite}></CurrentCat>
-      <FavouriteCat url={favorite}></FavouriteCat>
+      <Header colorScheme={colorScheme} setColorScheme={setColorScheme}></Header>
+      <main>
+        <CurrentCat setFavourite={setFavourite} colorScheme={colorScheme}></CurrentCat>
+      </main>
+      
+      <FavouriteCat url={favorite} colorScheme={colorScheme}></FavouriteCat>
     </div>
   );
 }
