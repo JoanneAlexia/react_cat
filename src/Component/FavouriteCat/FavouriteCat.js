@@ -4,16 +4,15 @@ function FavouriteCat(props) {
     let style = {
         backgroundColor: props.colorScheme
     };
+
+    console.log(props.favourite.url);
+
     return(
-        <div style={style} class="favourite_board">
-            <h2 class="favourite_board_heading">Favourites Board</h2>
-            <div class="favourite_cat_images">
-                <img class="favourite_cat_img" src={props.url}/>
-                <img class="favourite_cat_img" src={props.url}/>
-                <img class="favourite_cat_img" src={props.url}/>
-                <img class="favourite_cat_img" src={props.url}/>
-                <img class="favourite_cat_img" src={props.url}/>
-                <img class="favourite_cat_img" src={props.url}/>
+        <div style={style} className="favourite_board">
+            <h2 className="favourite_board_heading">Favourites Board</h2>
+            <div className="favourite_cat_images">
+                {props.favourite.map(cat => {
+                     return (<img key={cat.id} className="favourite_cat_img" src={cat.url}/>)})}
             </div>
         </div>
         

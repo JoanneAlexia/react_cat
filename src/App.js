@@ -6,17 +6,17 @@ import FavouriteCat from './Component/FavouriteCat/FavouriteCat';
 import Header from './Component/Header/Header';
 
 function App() {
-  const [favorite, setFavourite] = useState("https://cdn2.thecatapi.com/images/bkk.jpg");
+  const [favourite, setFavourite] = useState([{id: 1, url:"https://cdn2.thecatapi.com/images/bkk.jpg"}, {id: "yHZ1Cr6fd", url: "https://cdn2.thecatapi.com/images/yHZ1Cr6fd.jpg"}]);
   const [colorScheme, setColorScheme] = useState("#325aa8");
 
   return (
     <div className="App">
       <Header colorScheme={colorScheme} setColorScheme={setColorScheme}></Header>
       <main>
-        <CurrentCat setFavourite={setFavourite} colorScheme={colorScheme}></CurrentCat>
+        <CurrentCat favourite={favourite} setFavourite={setFavourite} colorScheme={colorScheme}></CurrentCat>
       </main>
       
-      <FavouriteCat url={favorite} colorScheme={colorScheme}></FavouriteCat>
+      <FavouriteCat favourite={favourite} colorScheme={colorScheme}></FavouriteCat>
     </div>
   );
 }

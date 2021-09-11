@@ -3,14 +3,14 @@ import axios from 'axios';
 import React, {useState} from "react";
 
 function CurrentCat(props) {
-    const [url, setUrl] = useState("https://cdn2.thecatapi.com/images/bkk.jpg");
+    const [currentCatInfo, setCurrentCatInfo] = useState({id: 1, url:"https://cdn2.thecatapi.com/images/bkk.jpg"});
     function newCatButtonClickHandler(){
         axios.get("https://api.thecatapi.com/v1/images/search").then(response => {
-        setUrl(response.data[0].url);
+        setCurrentCatInfo({id: response.data[0].id, url:response.data[0].url});
       })
     };
     function favouriteCatClickHandler(){
-        props.setFavourite(url);
+        props.setFavourite([...props.favourite, {id: currentCatInfo.id, url:currentCatInfo.url}]);
     };
 
     let style = {
@@ -25,7 +25,7 @@ function CurrentCat(props) {
                     <button style={style} onClick={favouriteCatClickHandler}><i className="far fa-grin-hearts"></i> This one's a favourite</button>
                 </div>
             </div>
-            <img src={url} alt="cat"/>
+            <img src={currentCatInfo.url} alt="cat"/>
         </div>
     );
 }
