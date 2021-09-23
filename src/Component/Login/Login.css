@@ -1,0 +1,87 @@
+.login-form-container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(82, 80, 76, 0.8);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+
+.login-form-container.enter-done{
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.login-form-container{
+    opacity: 0;
+}
+
+.login-form-container i{
+    color: white;
+    font-size: xx-large;
+}
+
+.login-form-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    border: none;
+    box-shadow: none;
+}
+.login-form{
+    padding: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: solid 10px white;
+    transform: translateY(-200px);
+    transition: all 0.3s ease-in-out;
+}
+
+.login-form-container.enter-done .login-form{
+    transform: translateY(0);
+}
+
+.login-form-container.exit .login-form{
+    transform: translateY(-200px);
+}
+
+.login-form label{
+    font-family: 'Azeret Mono', monospace;
+    color: white;
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+}
+.login-form h1{
+    color: white;
+    text-align: center;
+}
+
+.login-form input[type=text]{
+    width: 100%;
+	padding: 12px 20px;
+  	margin: 8px 0;
+	border: 1px solid #ccc;
+  	box-sizing: border-box;
+	border-radius: 4px;
+	color: #505866;
+    font-family: 'Azeret Mono', monospace;
+}
+
+.login-form input[type=submit]{
+    font-family: 'Azeret Mono', monospace;
+    border: none;
+    background-color: white;
+    padding: 10px;
+    margin: 10px auto;
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

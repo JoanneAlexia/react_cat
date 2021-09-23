@@ -1,7 +1,5 @@
 import './Header.css';
 
-
-
 function Header(props){
     let style = {
         backgroundColor: props.colorScheme
@@ -15,6 +13,10 @@ function Header(props){
         props.setColorScheme("#b50d3a");
     }
 
+    function openLoginHandler(){
+        props.setLoginOpen(true);
+    }
+
     return(
         <header style={style}>
             <div className="toggles">
@@ -23,7 +25,7 @@ function Header(props){
             </div>
             <h1>Cat App</h1>
             <div className="login">
-                <button style={style}>Log in</button>
+                <button onClick={openLoginHandler} style={style}>Log in</button>
             </div>
         </header>
     )
