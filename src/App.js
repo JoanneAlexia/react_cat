@@ -5,14 +5,16 @@ import CurrentCat from './Component/CurrentCat/CurrentCat';
 import FavouriteCat from './Component/FavouriteCat/FavouriteCat';
 import Header from './Component/Header/Header';
 import Login from './Component/Login/Login';
+import Modal from './Component/Modal/Modal';
 
 function App() {
   const [favourite, setFavourite] = useState([{id: 1, url:"https://cdn2.thecatapi.com/images/bkk.jpg"}, {id: "yHZ1Cr6fd", url: "https://cdn2.thecatapi.com/images/yHZ1Cr6fd.jpg"}]);
   const [colorScheme, setColorScheme] = useState("#325aa8");
-  const [loginOpen, setLoginOpen] = useState(false)
+  const [loginOpen, setLoginOpen] = useState(false);
+
   return (
     <div className="App">
-      <Login loginOpen={loginOpen} setLoginOpen={setLoginOpen} colorScheme={colorScheme} ></Login>
+      <Modal show={loginOpen} onClose={()=>setLoginOpen(false)} colorScheme={colorScheme}><Login></Login></Modal>
       <Header setLoginOpen = {setLoginOpen} colorScheme={colorScheme} setColorScheme={setColorScheme}></Header>
       <main>
         <CurrentCat favourite={favourite} setFavourite={setFavourite} colorScheme={colorScheme}></CurrentCat>
