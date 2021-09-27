@@ -32,6 +32,7 @@ header{
   h1{
     font-family: 'Dancing Script', cursive;
     font-size: xx-large;
+    color: white;
   }
   
   .login{

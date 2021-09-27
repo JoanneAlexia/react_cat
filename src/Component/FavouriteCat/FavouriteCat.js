@@ -1,22 +1,21 @@
 import './FavouriteCat.css'
 
-function FavouriteCat(props) {
+function FavouriteCat(props){
+    function onClickHandler(){
+        props.setFocusCat({show: true, url: props.src})
+    }
     let style = {
         backgroundColor: props.colorScheme
     };
-
-    console.log(props.favourite.url);
-
     return(
-        <div style={style} className="favourite_board">
-            <h2 className="favourite_board_heading">Favourites Board</h2>
-            <div className="favourite_cat_images">
-                {props.favourite.map(cat => {
-                     return (<img key={cat.id} className="favourite_cat_img" src={cat.url}/>)})}
-            </div>
+        <div className="favourite_cat">
+            <img className="favourite_cat_img" 
+                onClick={onClickHandler} 
+                key={props.key} 
+                src={props.src} ></img>
+            <div style={style} className="ranking">1</div>
         </div>
-        
-    )
+    );
 }
 
 export default FavouriteCat;
