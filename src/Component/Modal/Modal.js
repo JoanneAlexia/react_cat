@@ -15,7 +15,7 @@ function Modal(props){
             timeout={{ enter:0, exit: 300}}>
             <div className={`modal ${props.show ? 'show' : ''} `} onClick={props.onClose}>
                 <div style={styleColor} className="modal-content" onClick={e => e.stopPropagation()}>
-                   <button className="login-form-close" onClick={props.onClose} ><i class="fas fa-times"></i></button>
+                   <button onClick={props.onClose} ><i class="fas fa-times"></i></button>
                     {props.children}
                 </div>    
             </div>

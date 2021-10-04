@@ -1,20 +1,20 @@
-.login-form-container{
+.form-container{
     padding: 50px;
 }
 
-.login-form label{
+.form label{
     font-family: 'Azeret Mono', monospace;
     color: white;
     text-align: left;
     width: 100%;
     display: inline-block;
 }
-.login-form h1{
+.form h1{
     color: white;
     text-align: center;
 }
 
-.login-form input[type=text]{
+.form input[type=text]{
     width: 100%;
 	padding: 12px 20px;
   	margin: 8px 0;
@@ -25,14 +25,21 @@
     font-family: 'Azeret Mono', monospace;
 }
 
-.login-form input[type=submit]{
+.form input[type=submit]{
     font-family: 'Azeret Mono', monospace;
     border: none;
     background-color: white;
     padding: 10px;
     margin: 10px auto;
-    position: relative; 
-    left: 50%;
-    transform: translateX(-50%);
+    display: block; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form a{
+    text-decoration: underline;
+    margin-top: 20px;;
+    text-align: center;
+    display: block;
+    font-family: 'Azeret Mono', monospace;
+    color: white;
 }
