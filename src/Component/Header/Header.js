@@ -4,7 +4,7 @@ function Header(props){
     let style = {
         backgroundColor: props.colorScheme
     };
-
+    
     function blueClickHandler(){
         props.setColorScheme("#325aa8");
     }
@@ -29,8 +29,9 @@ function Header(props){
                 <div className="red toggle" onClick={redClickHandler}></div>
             </div>
             <h1>Cat App</h1>
-            <div className="log-btn">
-                <button onClick = {props.isLoggedIn ? logoutHandler : openLoginHandler} style={style}>{props.isLoggedIn ? "Log out" : "Log in"}</button>
+            <div className="login-section">
+                <p className={!props.isLoggedIn ? "remove":"keep"}>Hi Joanne <i class="fas fa-paw"></i></p>
+                <button className="log-btn" onClick = {props.isLoggedIn ? logoutHandler : openLoginHandler} style={style}>{props.isLoggedIn ? "Log out" : "Log in"}</button>
             </div>
         </header>
     )

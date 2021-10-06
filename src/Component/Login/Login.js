@@ -8,6 +8,7 @@ function Login(props){
     }
 
     function submitLoginHandler(){
+        //event.preventDefault();
         localStorage.setItem('isLoggedIn', '1');
         props.setIsLoggedIn(true);
     }

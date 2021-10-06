@@ -10,8 +10,8 @@ import FocusCat from './Component/FocusCat/FocusCat';
 import CreateAccountForm from './Component/CreateAccountForm/CreateAccountForm';
 
 function App() {
-  
-  const [favourite, setFavourite] = useState([{id: 1, url:"https://cdn2.thecatapi.com/images/bkk.jpg"}, {id: "yHZ1Cr6fd", url: "https://cdn2.thecatapi.com/images/yHZ1Cr6fd.jpg"}]);
+
+  const [changedFavourites, setChangedFavourites] = useState(false);
   const [colorScheme, setColorScheme] = useState("#325aa8");
   const [loginOpen, setLoginOpen] = useState(false);
   const [createAccountOpen, setCreateAccountOpen] = useState(false);
@@ -27,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+
       {/*LOGIN*/}
       <Modal 
         show={loginOpen} 
@@ -55,8 +56,7 @@ function App() {
       {/*NEW CAT IMAGE*/}  
       <main>
         <CurrentCat 
-          favourite={favourite} 
-          setFavourite={setFavourite} 
+          setChangedFavourites={setChangedFavourites} 
           colorScheme={colorScheme}></CurrentCat>
       </main>
 
@@ -67,8 +67,9 @@ function App() {
       <FavouritesBoard 
         focusCat={focusCat} 
         setFocusCat={setFocusCat} 
-        favourite={favourite} 
+        changedFavourites={changedFavourites}
         colorScheme={colorScheme}></FavouritesBoard>
+
     </div>
   );
 }

@@ -1,0 +1,5 @@
+.loginErrorMessage{
+    display: none;
+    color: red;
+    text-decoration: bold;
+}

@@ -7,6 +7,7 @@ function CurrentCat(props) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(""); 
 
+    
     const newCatButtonClickHandler = useCallback(async () => {  
         setIsLoading(true);
         setError(null);
@@ -14,19 +15,27 @@ function CurrentCat(props) {
             const response = await axios.get("https://api.thecatapi.com/v1/images/search");
             setCurrentCatInfo({id: response.data[0].id, url:response.data[0].url});
             setIsLoading(false)
+            props.setChangedFavourites(false);
         }catch(error){
             setIsLoading(false);
             setError(error.message);
         }
     },[]);
 
+    
     useEffect(() => {
         newCatButtonClickHandler()
     }, [newCatButtonClickHandler]);
-
-    function favouriteCatClickHandler(){
-        props.setFavourite([...props.favourite, {id: currentCatInfo.id, url:currentCatInfo.url}]);
-    };
+    
+    async function favouriteCatClickHandler(){
+        try{
+            const response = await axios.post("https://cat-app-abe7c-default-rtdb.firebaseio.com/users.json",
+            JSON.stringify({id: currentCatInfo.id, url:currentCatInfo.url}));
+            props.setChangedFavourites(true);
+        }catch(error){
+            console.log(error.message);
+        }
+    }
 
     let style = {
         backgroundColor: props.colorScheme
