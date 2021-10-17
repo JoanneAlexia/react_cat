@@ -42,11 +42,7 @@ header{
     margin-right: 20px;
   }
 
-  .remove{
-    display: none;
-  }
-
-  .keep{
+  .username{
     display: inline-block;
     margin-right: 20px;
   }

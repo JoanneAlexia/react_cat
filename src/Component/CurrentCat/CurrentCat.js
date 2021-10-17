@@ -1,12 +1,14 @@
 import "./CurrentCat.css";
 import axios from 'axios';
-import React, {useEffect, useState, useCallback} from "react";
+import React, {useEffect, useState, useCallback,useContext} from "react";
+import AuthContext from "../../store/auth-context";
 
 function CurrentCat(props) {
     const [currentCatInfo, setCurrentCatInfo] = useState({id: 1, url:"https://cdn2.thecatapi.com/images/bkk.jpg"});
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(""); 
 
+    const authCtx = useContext(AuthContext);
     
     const newCatButtonClickHandler = useCallback(async () => {  
         setIsLoading(true);
@@ -29,7 +31,8 @@ function CurrentCat(props) {
     
     async function favouriteCatClickHandler(){
         try{
-            const response = await axios.post("https://cat-app-abe7c-default-rtdb.firebaseio.com/users.json",
+            let userID = authCtx.userID;
+            await axios.post("https://cat-app-abe7c-default-rtdb.firebaseio.com/users/"+userID+"/FavouriteCats.json",
             JSON.stringify({id: currentCatInfo.id, url:currentCatInfo.url}));
             props.setChangedFavourites(true);
         }catch(error){

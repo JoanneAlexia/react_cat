@@ -1,5 +1,10 @@
 .loginErrorMessage{
-    display: none;
     color: red;
     text-decoration: bold;
+    text-align: center;
+    font-family: 'Azeret Mono', monospace;
+    background-color: #edc5cb;
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 4px;
 }

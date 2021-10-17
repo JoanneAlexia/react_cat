@@ -13,7 +13,6 @@ function FavouriteCat(props){
                 onClick={onClickHandler} 
                 key={props.key} 
                 src={props.src} ></img>
-            <div style={style} className="ranking">1</div>
         </div>
     );
 }

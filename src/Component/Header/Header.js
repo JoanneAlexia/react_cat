@@ -1,6 +1,12 @@
 import './Header.css';
+import {useContext} from 'react';
+
+import AuthContext from '../../store/auth-context';
 
 function Header(props){
+    const authCtx = useContext(AuthContext);
+    const isLoggedIn = authCtx.isLoggedIn;
+
     let style = {
         backgroundColor: props.colorScheme
     };
@@ -17,11 +23,6 @@ function Header(props){
         props.setLoginOpen(true);
     }
 
-    function logoutHandler(){
-        localStorage.removeItem('IsLoggedIn');
-        props.setIsLoggedIn(false);
-    }
-
     return(
         <header style={style}>
             <div className="toggles">
@@ -30,8 +31,10 @@ function Header(props){
             </div>
             <h1>Cat App</h1>
             <div className="login-section">
-                <p className={!props.isLoggedIn ? "remove":"keep"}>Hi Joanne <i class="fas fa-paw"></i></p>
-                <button className="log-btn" onClick = {props.isLoggedIn ? logoutHandler : openLoginHandler} style={style}>{props.isLoggedIn ? "Log out" : "Log in"}</button>
+                {isLoggedIn && (<div>
+                <p className="username">Hi {authCtx.username} <i class="fas fa-paw"></i></p>
+                <button className="log-btn" onClick = {authCtx.logout} style={style}>Logout</button></div>)}
+                {!isLoggedIn && (<button className="log-btn" onClick = {openLoginHandler} style={style}>Login</button>)}
             </div>
         </header>
     )

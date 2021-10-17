@@ -8,20 +8,3 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 40px 10px;   
 }
-
-.ranking{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: white 5px solid;
-    position: absolute;
-    bottom:40px;
-    right: 10px;
-    color: white;
-    text-align: center;
-    vertical-align: center;
-    font-family: 'Azeret Mono', monospace;
-    font-size: large;
-    line-height: 50px;
-
-}
