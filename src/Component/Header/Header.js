@@ -23,6 +23,11 @@ function Header(props){
         props.setLoginOpen(true);
     }
 
+    function logoutHandler(){
+        authCtx.logout();
+        props.setChangedFavourites(false);
+    }
+
     return(
         <header style={style}>
             <div className="toggles">
@@ -33,7 +38,7 @@ function Header(props){
             <div className="login-section">
                 {isLoggedIn && (<div>
                 <p className="username">Hi {authCtx.username} <i class="fas fa-paw"></i></p>
-                <button className="log-btn" onClick = {authCtx.logout} style={style}>Logout</button></div>)}
+                <button className="log-btn" onClick = {logoutHandler} style={style}>Logout</button></div>)}
                 {!isLoggedIn && (<button className="log-btn" onClick = {openLoginHandler} style={style}>Login</button>)}
             </div>
         </header>

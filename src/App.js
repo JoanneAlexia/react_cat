@@ -15,7 +15,7 @@ function App() {
   const [colorScheme, setColorScheme] = useState("#325aa8");
   const [loginOpen, setLoginOpen] = useState(false);
   const [createAccountOpen, setCreateAccountOpen] = useState(false);
-  const [focusCat, setFocusCat] = useState({show:false, url:"https://cdn2.thecatapi.com/images/bkk.jpg"});
+  const [focusCat, setFocusCat] = useState({show:false, id:"test", url:""});
 
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
@@ -41,7 +41,8 @@ function App() {
       <Header 
         setLoginOpen = {setLoginOpen} 
         colorScheme={colorScheme} 
-        setColorScheme={setColorScheme}>
+        setColorScheme={setColorScheme}
+        setChangedFavourites={setChangedFavourites}>
       </Header>
 
       {/*NEW CAT IMAGE*/}  
@@ -56,7 +57,7 @@ function App() {
       (<div>
         <Modal 
         show={focusCat.show} 
-        onClose={()=>setFocusCat({...focusCat,show: false})}><FocusCat url={focusCat.url}></FocusCat></Modal>
+        onClose={()=>setFocusCat({...focusCat,show: false})}><FocusCat id={focusCat.id} url={focusCat.url} setFocusCat={setFocusCat} setChangedFavourites={setChangedFavourites}></FocusCat></Modal>
       <FavouritesBoard 
         focusCat={focusCat} 
         setFocusCat={setFocusCat} 

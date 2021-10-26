@@ -32,8 +32,9 @@ function CurrentCat(props) {
     async function favouriteCatClickHandler(){
         try{
             let userID = authCtx.userID;
-            await axios.post("https://cat-app-abe7c-default-rtdb.firebaseio.com/users/"+userID+"/FavouriteCats.json",
-            JSON.stringify({id: currentCatInfo.id, url:currentCatInfo.url}));
+            let id = currentCatInfo.id
+            await axios.put("https://cat-app-abe7c-default-rtdb.firebaseio.com/users/"+userID+"/FavouriteCats/"+id+".json",
+            JSON.stringify({url:currentCatInfo.url}));
             props.setChangedFavourites(true);
         }catch(error){
             console.log(error.message);

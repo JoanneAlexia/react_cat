@@ -2,7 +2,7 @@ import './FavouriteCat.css'
 
 function FavouriteCat(props){
     function onClickHandler(){
-        props.setFocusCat({show: true, url: props.src})
+        props.setFocusCat({show: true, id: props.id, url: props.src})
     }
     let style = {
         backgroundColor: props.colorScheme
@@ -11,8 +11,7 @@ function FavouriteCat(props){
         <div className="favourite_cat">
             <img className="favourite_cat_img" 
                 onClick={onClickHandler} 
-                key={props.key} 
-                src={props.src} ></img>
+                src={props.src}></img>
         </div>
     );
 }
